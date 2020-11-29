@@ -73,13 +73,14 @@ int main()
 	}
 
 	int j = 0;
+
 	#pragma omp parallel
 	{
 		while (check && j < 8)
 		{
 			#pragma omp critical
 			{
-				check = isCorrect(childrenProp[j], childrenSum[j], sum);
+				check = isCorrect(childrenProp[j], childrenSum[j], totalSum);
 
 				if (!check) {
 					cout << "Incorrect calculations" << endl;
